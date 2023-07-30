@@ -4,7 +4,7 @@ import { AuthenticatorGuard } from './guards/authenticator.guard';
 export const AppRouter: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'player',
     pathMatch: 'full',
   },
   {
