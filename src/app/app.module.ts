@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { AppRouter } from './app.routes';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { PlayerContentComponent } from './components/player-content/player-content.component';
 
 @NgModule({
   declarations: [AppComponent],
