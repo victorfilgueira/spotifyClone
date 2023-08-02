@@ -1,0 +1,36 @@
+@import 'variables.scss';
+
+button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: $black;
+    border: none;
+    color: $white;
+    padding-left: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+    padding: 8px 0 8px 0;
+}
+
+button:hover {
+    background-color: $grey-3;
+}
+
+.playlist-button {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.playlist-img {
+    width: 2rem;
+    height: 2rem;
+    margin: 0 1rem 0  1.5rem;
+}
+
+span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

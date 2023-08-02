@@ -6,6 +6,7 @@ import { PlayerComponent } from './player.component';
 import { SideBarComponent } from 'src/app/components/side-bar/side-bar.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { PlayerContentComponent } from 'src/app/components/player-content/player-content.component';
+import { PlaylistButtonComponent } from 'src/app/components/playlist-button/playlist-button.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { PlayerContentComponent } from 'src/app/components/player-content/player
     SideBarComponent,
     FooterComponent,
     PlayerContentComponent,
+    PlaylistButtonComponent,
   ],
   imports: [CommonModule, PlayerRoutingModule],
 })
