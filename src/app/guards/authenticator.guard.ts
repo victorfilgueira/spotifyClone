@@ -27,10 +27,8 @@ export class AuthenticatorGuard implements CanLoad {
       const createdUser = this.spotifyService.initializer();
       if (createdUser) {
         res(true);
-      } else this.unauthenticated();
+      } else res(this.unauthenticated());
     });
-
-    return true;
   }
 
   unauthenticated() {

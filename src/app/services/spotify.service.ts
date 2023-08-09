@@ -42,7 +42,6 @@ export class SpotifyService {
   async getSpotifyUser() {
     const userInfo = await this.spotify.getMe();
     this.user = spotifyUserToUser(userInfo);
-    console.log(this.user);
   }
 
   getUrlLogin() {
@@ -69,9 +68,10 @@ export class SpotifyService {
   }
 
   async getUserPlaylists(): Promise<IPlaylist[]> {
-    console.log(this.user);
+    if (!this.user) {
+      await this.getSpotifyUser();
+    }
     const playlists = await this.spotify.getUserPlaylists(this.user.id);
-    console.log(playlists);
     return playlists.items.map(spotifyPlaylistToPlaylist);
   }
 }
