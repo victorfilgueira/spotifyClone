@@ -16,17 +16,19 @@
     </div>
     <div class="playlists">
         <span class="playlist-title">PLAYLISTS</span>
-        <app-playlist-button
-            [playlistImage]="'../../../assets/images/liked-songs-image.png'"
-            [playlistName]="'Liked Song'"
-        >
-        </app-playlist-button>
-        <app-playlist-button
-            *ngFor="let playlist of playlists"
-            [playlistImage]="playlist.imageUrl"
-            [playlistName]="playlist.name"
-        >
-        </app-playlist-button>
+        <div class="playlist-list">
+            <app-playlist-button
+                [playlistImage]="'../../../assets/images/liked-songs-image.png'"
+                [playlistName]="'Liked Song'"
+            >
+            </app-playlist-button>
+            <app-playlist-button
+                *ngFor="let playlist of playlists"
+                [playlistImage]="playlist.imageUrl"
+                [playlistName]="playlist.name"
+            >
+            </app-playlist-button>
+        </div>
     </div>
     <div class="musicImg"></div>
 </div>
