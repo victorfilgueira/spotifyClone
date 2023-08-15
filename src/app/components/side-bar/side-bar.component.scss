@@ -84,6 +84,7 @@ button:hover {
     margin-top: 0.5rem;
     max-height: calc(95vh - $flex-subtract - 5vh);
     overflow-y: auto;
+    margin: 0px 5px;
 
     &::-webkit-scrollbar {
         display: none;
