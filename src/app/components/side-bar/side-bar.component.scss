@@ -1,11 +1,18 @@
 @import 'variables.scss';
 
+$h-logo: 2.5rem;
+$h-buttons: 7.5rem;
+$m-between: 1rem;
+$h-footer: 4.5rem;
+
+$flex-subtract: calc($h-logo + $h-buttons + $h-footer + $m-between);
+
 .logo {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 131px;
-    height: 40px;
+    height: $h-logo;
     margin-top: 1rem;
     margin-left: 1.5rem;
 }
@@ -26,6 +33,7 @@
     justify-content: flex-start;
     margin-top: 1.5rem;
     padding: 0 5px 0 5px;
+    height: $h-buttons;
 }
 
 button {
@@ -72,9 +80,9 @@ button:hover {
     margin-top: 1.5rem;
 }
 
-.playlist-list {
+.playlist-scroll {
     margin-top: 0.5rem;
-    max-height: 50vh;
+    max-height: calc(95vh - $flex-subtract - 5vh);
     overflow-y: auto;
 
     &::-webkit-scrollbar {
