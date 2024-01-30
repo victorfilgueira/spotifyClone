@@ -8,6 +8,7 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PlayerContentComponent } from './components/player-content/player-content.component';
 import { PlaylistButtonComponent } from './components/playlist-button/playlist-button.component';
+import { ImagePlayingSongComponent } from './components/image-playing-song/image-playing-song.component';
 
 @NgModule({
   declarations: [AppComponent],

@@ -74,4 +74,17 @@ export class SpotifyService {
     const playlists = await this.spotify.getUserPlaylists(this.user.id);
     return playlists.items.map(spotifyPlaylistToPlaylist);
   }
+
+  async getPlayingSongImageUrl() {
+    const currentTrack = await this.spotify.getMyCurrentPlayingTrack();
+    const lastPlayedTrack = (await this.spotify.getMyRecentlyPlayedTracks())
+      .items[0].track;
+
+    if (!currentTrack) {
+      console.log(lastPlayedTrack);
+      return '';
+    } else {
+      return currentTrack.item.album.images[0].url;
+    }
+  }
 }
