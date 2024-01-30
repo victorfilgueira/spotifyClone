@@ -7,6 +7,7 @@ import {
   spotifyUserToUser,
 } from '../Utils/SpotifyHelper';
 import { IPlaylist } from '../interfaces/IPlaylist';
+import { ITrack } from '../interfaces/ITrack';
 
 @Injectable({
   providedIn: 'root',
@@ -75,16 +76,33 @@ export class SpotifyService {
     return playlists.items.map(spotifyPlaylistToPlaylist);
   }
 
-  async getPlayingSongImageUrl() {
+  async getPlayingSongImageUrl(): Promise<string> {
     const currentTrack = await this.spotify.getMyCurrentPlayingTrack();
     const lastPlayedTrack = (await this.spotify.getMyRecentlyPlayedTracks())
       .items[0].track;
 
     if (!currentTrack) {
-      console.log(lastPlayedTrack);
       return '';
     } else {
       return currentTrack.item.album.images[0].url;
     }
+  }
+
+  async getPlayingSongData(): Promise<ITrack> {
+    const currentTrack = await this.spotify.getMyCurrentPlayingTrack();
+
+    const currentMusic: ITrack = {
+      id: currentTrack.item.id,
+      title: currentTrack.item.name,
+      artists: [...currentTrack.item.artists],
+      album: {
+        id: currentTrack.item.album.id,
+        name: currentTrack.item.album.name,
+        imageUrl: currentTrack.item.album.images[0].url,
+      },
+      tempo: '',
+    };
+
+    return currentMusic;
   }
 }

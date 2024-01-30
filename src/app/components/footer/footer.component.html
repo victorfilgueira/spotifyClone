@@ -1,0 +1,9 @@
+<div class="footer">
+    <div class="current-music">
+        <app-image-playing-song></app-image-playing-song>
+        <div class="music-data">
+            <span *ngIf="currentMusic">{{currentMusic.title}}</span>
+            <span class="artist-text">{{artistsString}}</span>
+        </div>
+    </div>
+</div>

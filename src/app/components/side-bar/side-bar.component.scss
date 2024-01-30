@@ -82,7 +82,7 @@ button:hover {
 }
 
 .playlist-scroll {
-    max-height: calc(95vh - $flex-subtract - 5vh - $h-img-playing-song);
+    max-height: calc(95vh - $flex-subtract - 11vh);
     overflow-y: auto;
     margin: 16px 5px;
 

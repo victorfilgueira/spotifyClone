@@ -1,7 +1,7 @@
 @import 'variables.scss';
 
 .sidebar {
-    height: 90vh;
+    height: 86vh;
     width: 15rem;
 }
 
@@ -9,10 +9,4 @@
     display: flex;
     flex: 1;
     background: linear-gradient(to top, $begin-fade-color 50vh, $end-fade-color-2);
-}
-
-.footer {
-    display: flex;
-    height: 10vh;
-    background-color: $grey-3;
 }

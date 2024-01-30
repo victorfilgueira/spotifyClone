@@ -1,0 +1,35 @@
+@import 'variables.scss';
+
+.footer {
+    display: flex;
+    height: 14vh;
+    background-color: $grey-3;
+    align-items: center;
+}
+
+.current-music {
+    display: flex;
+    color: $white;
+
+    span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block
+    }
+}
+
+.music-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0.5rem;
+    font-weight: bold;
+
+    .artist-text {
+        text-align: left;
+        width: 9rem;
+        color: $light-grey-1;
+        font-size: 0.8rem;
+    }
+}
