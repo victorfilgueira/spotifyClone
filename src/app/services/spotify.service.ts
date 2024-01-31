@@ -111,4 +111,17 @@ export class SpotifyService {
     localStorage.clear();
     this.router.navigate(['/login']);
   }
+
+  async play(): Promise<void> {
+    this.spotify.play();
+  }
+
+  async stop(): Promise<void> {
+    this.spotify.pause();
+  }
+
+  async isMusicPlaying(): Promise<boolean> {
+    const playbackInfo = await this.spotify.getMyCurrentPlaybackState();
+    return playbackInfo.is_playing;
+  }
 }
