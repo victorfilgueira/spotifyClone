@@ -25,4 +25,8 @@ export class FooterComponent implements OnInit {
 
     this.artistsString = artistNames.join(', ');
   }
+
+  logout() {
+    this.spotifyService.logout();
+  }
 }

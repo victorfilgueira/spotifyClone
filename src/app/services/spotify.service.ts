@@ -8,6 +8,7 @@ import {
 } from '../Utils/SpotifyHelper';
 import { IPlaylist } from '../interfaces/IPlaylist';
 import { ITrack } from '../interfaces/ITrack';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,7 @@ export class SpotifyService {
   spotify: SpotifyWebApi.SpotifyWebApiJs = null;
   user: IUser;
 
-  constructor() {
+  constructor(private router: Router) {
     this.spotify = new SpotifyWebApi();
   }
 
@@ -104,5 +105,10 @@ export class SpotifyService {
     };
 
     return currentMusic;
+  }
+
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 }
