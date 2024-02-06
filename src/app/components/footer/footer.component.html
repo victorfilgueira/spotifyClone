@@ -8,10 +8,10 @@
     </div>
     <div class="player">
         <img class="img-button" src="../../../assets/images/shuffle.png" alt="Shuffle Button">
-        <img class="img-button" src="../../../assets/images/back.png" alt="Back Button">
+        <img class="img-button" src="../../../assets/images/back.png" alt="Back Button" (click)="forward()">
         <img *ngIf="showPlayButton" class="img-button" src="../../../assets/images/play.png" alt="Play Button" (click)="togglePlayPause()">
         <img *ngIf="!showPlayButton" class="stop-button" src="../../../assets/images/pause.png" alt="Pause Button" (click)="togglePlayPause()">
-        <img class="img-button" src="../../../assets/images/forward.png" alt="Forward Button">
+        <img class="img-button" src="../../../assets/images/forward.png" alt="Forward Button" (click)="forward()">
         <img class="img-button" src="../../../assets/images/repeat.png" alt="Repeat Button">
     </div>
     <div class="end-buttons">

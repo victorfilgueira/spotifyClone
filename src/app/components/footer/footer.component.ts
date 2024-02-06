@@ -41,6 +41,14 @@ export class FooterComponent implements OnInit {
     this.isPlaying = false;
   }
 
+  forward() {
+    this.spotifyService.forward();
+  }
+
+  back() {
+    this.spotifyService.back();
+  }
+
   async isMusicPlaying() {
     this.isPlaying = await this.spotifyService.isMusicPlaying();
   }

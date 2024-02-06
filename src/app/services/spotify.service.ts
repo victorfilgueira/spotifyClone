@@ -124,4 +124,12 @@ export class SpotifyService {
     const playbackInfo = await this.spotify.getMyCurrentPlaybackState();
     return playbackInfo.is_playing;
   }
+
+  async forward(): Promise<void> {
+    this.spotify.skipToNext();
+  }
+
+  async back(): Promise<void> {
+    this.spotify.skipToPrevious();
+  }
 }

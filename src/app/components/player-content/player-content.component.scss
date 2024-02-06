@@ -1,0 +1,78 @@
+@import 'variables.scss';
+
+.playlist {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 4rem;
+    padding-left: 2rem;
+    color: $light-grey-1;
+    font-weight: bold;
+
+    .img-playlist {
+        width: 14rem;
+        height: 14rem;
+    }
+
+    .infos {
+        display: flex;
+        flex-direction: column;
+
+        .playlist-span {
+            font-size: 0.7rem;
+            margin-top: 1.5rem;
+        }
+    
+        .playlist-name {
+            font-size: 4rem;
+            color: white;
+        }
+
+        .playlist-infos { 
+            font-size: 0.7rem;
+            margin-top: 0.5rem
+        }
+    }
+}
+
+.tracks-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    color: $light-grey-1;
+    justify-content: space-between;
+
+    span {
+        font-size: 0.7rem;
+        font-weight: bold;
+        flex: 1;
+    }
+
+    span.hastag {
+        flex: 0.2;
+    }
+
+    span.title {
+        flex: 1.5
+    }
+}
+
+.br-line {
+    border: 1px solid $light-grey-1;
+    margin: 0.5rem 2rem 0.5rem 2rem;
+    opacity: 0.15;
+}
+
+span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
