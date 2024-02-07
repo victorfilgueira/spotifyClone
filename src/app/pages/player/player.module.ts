@@ -8,6 +8,7 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { PlayerContentComponent } from 'src/app/components/player-content/player-content.component';
 import { PlaylistButtonComponent } from 'src/app/components/playlist-button/playlist-button.component';
 import { ImagePlayingSongComponent } from 'src/app/components/image-playing-song/image-playing-song.component';
+import { PlaylistTrackComponent } from 'src/app/components/playlist-track/playlist-track.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ImagePlayingSongComponent } from 'src/app/components/image-playing-song
     PlayerContentComponent,
     PlaylistButtonComponent,
     ImagePlayingSongComponent,
+    PlaylistTrackComponent,
   ],
   imports: [CommonModule, PlayerRoutingModule],
 })

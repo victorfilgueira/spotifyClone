@@ -16,8 +16,9 @@
     font-weight: bold;
 
     .img-playlist {
-        width: 14rem;
-        height: 14rem;
+        width: 9rem;
+        height: 9rem;
+        margin-right: 2rem;
     }
 
     .infos {
@@ -64,6 +65,11 @@
     span.title {
         flex: 1.5
     }
+}
+
+.tracks {
+    display: flex;
+    flex-direction: column;
 }
 
 .br-line {

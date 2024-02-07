@@ -1,0 +1,63 @@
+
+@import 'variables.scss';
+
+.playlist-button {
+    display: flex;
+    align-items: center;
+    width: 94%;
+    height: 3.5rem;
+    background-color: $black;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+    margin: 0.5rem 2rem 0.5rem 2rem;
+    text-align: start;
+
+    img {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 0 1rem 0  1.5rem;
+    }
+    
+    span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+        color: $light-grey-1;
+    }
+
+    span.number {
+      display: flex;
+      justify-content: center;
+      flex: 0.2
+    }
+
+    .track-title {
+      display: flex;
+      align-items: center;
+      flex: 1.5;
+
+      .info {
+        display: flex;
+        flex-direction: column;
+  
+        span.title {
+          font-weight: bold;
+        }
+      }
+    }
+
+    span.album {
+      flex: 1;
+    }
+
+    span.date-added {
+      flex: 1;
+    }
+}
+
+.playlist-button:hover {
+    background-color: $grey-3;
+}
