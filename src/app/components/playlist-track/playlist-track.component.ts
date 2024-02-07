@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
+import { ITrack } from 'src/app/interfaces/ITrack';
 
 @Component({
   selector: 'app-playlist-track',
@@ -6,4 +12,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./playlist-track.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PlaylistTrackComponent {}
+export class PlaylistTrackComponent implements OnInit {
+  @Input()
+  track: ITrack;
+
+  constructor() {}
+
+  ngOnInit(): void {}
+}

@@ -132,4 +132,13 @@ export class SpotifyService {
   async back(): Promise<void> {
     this.spotify.skipToPrevious();
   }
+
+  async getLikedPlaylist(): Promise<any> {
+    this.spotify.getMySavedTracks();
+    if (!this.user) {
+      await this.getSpotifyUser();
+    }
+    const playlist = await this.spotify.getMySavedTracks(this.user.id);
+    return playlist;
+  }
 }
