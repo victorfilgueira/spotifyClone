@@ -82,3 +82,11 @@ span {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.playlist-scroll {
+    overflow-y: auto;
+    max-height: 21rem;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
