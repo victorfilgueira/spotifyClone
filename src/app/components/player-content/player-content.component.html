@@ -23,16 +23,12 @@
         </div>
         <hr class="br-line">
         <div class="playlist-scroll">
-            <app-playlist-track></app-playlist-track>
-            <app-playlist-track></app-playlist-track>
-            <app-playlist-track></app-playlist-track>
-            <app-playlist-track></app-playlist-track>
-            <app-playlist-track></app-playlist-track>
-            <app-playlist-track></app-playlist-track>
-            <app-playlist-track></app-playlist-track>
-            <app-playlist-track></app-playlist-track>
-            <app-playlist-track></app-playlist-track>
-            <app-playlist-track></app-playlist-track>
+            <app-playlist-track
+                *ngFor="let track of tracks; let i = index"
+                [track]="track"
+                [index]="i"
+            >
+            </app-playlist-track>
         </div>
     </div>
 </div>

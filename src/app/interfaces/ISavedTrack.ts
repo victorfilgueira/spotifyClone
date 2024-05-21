@@ -1,6 +1,7 @@
-export interface ITrack {
+export interface ISavedTrack {
   id: string;
   title: string;
+  addedDate: string;
   artists: {
     id: string;
     name: string;

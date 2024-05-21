@@ -1,13 +1,16 @@
 <button class="playlist-button">
-    <span class="number">1</span>
+    <span class="number">{{index + 1}}</span>
     <div class="track-title">
         <img src="../../../assets/images/liked-songs.png" alt="User Playlist Image">
         <div class="info">
-            <span class="title">We're Good</span>
-            <span class="artists">Dua Lipa</span>
+            <span class="title">{{track.title}}</span>
+            <span *ngIf="track.artists.length == 1" class="artists">{{track.artists[0].name}}</span>
+            <span *ngIf="track.artists.length > 1" class="artists">
+                {{getArtistsNames(track)}}
+            </span>
         </div>
     </div>
-    <span class="album">Future Nostalgia</span>
-    <span class="date-added">Feb 06, 2024</span>
-    <span class="time-stamp">05:24</span>
+    <span class="album">{{track.album.name}}</span>
+    <span class="date-added">{{formatDate(track.addedDate)}}</span>
+    <span class="time-stamp">{{formatDuration(track.tempo)}}</span>
 </button>

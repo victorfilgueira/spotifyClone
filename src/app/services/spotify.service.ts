@@ -4,11 +4,14 @@ import SpotifyWebApi from 'spotify-web-api-js';
 import { IUser } from '../interfaces/IUser';
 import {
   spotifyPlaylistToPlaylist,
+  spotifySavedTrackToITrack,
   spotifyUserToUser,
 } from '../Utils/SpotifyHelper';
 import { IPlaylist } from '../interfaces/IPlaylist';
 import { ITrack } from '../interfaces/ITrack';
 import { Router } from '@angular/router';
+import { IPlaylistFull } from '../interfaces/IPlaylistFull';
+import { ISavedTrack } from '../interfaces/ISavedTrack';
 
 @Injectable({
   providedIn: 'root',
@@ -101,7 +104,7 @@ export class SpotifyService {
         name: currentTrack.item.album.name,
         imageUrl: currentTrack.item.album.images[0].url,
       },
-      tempo: '',
+      tempo: 0,
     };
 
     return currentMusic;
@@ -133,12 +136,18 @@ export class SpotifyService {
     this.spotify.skipToPrevious();
   }
 
-  async getLikedPlaylist(): Promise<any> {
+  async getLikedPlaylist(): Promise<ISavedTrack[]> {
     this.spotify.getMySavedTracks();
     if (!this.user) {
       await this.getSpotifyUser();
     }
     const playlist = await this.spotify.getMySavedTracks(this.user.id);
-    return playlist;
+    const tracks: ISavedTrack[] = playlist.items.map(spotifySavedTrackToITrack);
+
+    return tracks;
+  }
+
+  async getSongById() {
+    const track = this.spotify.getPlaylistCoverImage;
   }
 }

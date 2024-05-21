@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IPlaylist } from 'src/app/interfaces/IPlaylist';
+import { ISavedTrack } from 'src/app/interfaces/ISavedTrack';
+import { ITrack } from 'src/app/interfaces/ITrack';
 import { SpotifyService } from 'src/app/services/spotify.service';
 
 @Component({
@@ -8,8 +10,7 @@ import { SpotifyService } from 'src/app/services/spotify.service';
   styleUrls: ['./player-content.component.scss'],
 })
 export class PlayerContentComponent implements OnInit {
-  userPlaylist: IPlaylist[];
-  likedSongsPlaylist: any;
+  tracks: ISavedTrack[];
 
   constructor(private spotifyService: SpotifyService) {}
 
@@ -18,7 +19,6 @@ export class PlayerContentComponent implements OnInit {
   }
 
   async getLikedSongsPlaylist() {
-    this.userPlaylist = await this.spotifyService.getLikedPlaylist();
-    console.log(this.userPlaylist);
+    this.tracks = await this.spotifyService.getLikedPlaylist();
   }
 }
