@@ -1,7 +1,7 @@
 <button class="playlist-button">
     <span class="number">{{index + 1}}</span>
     <div class="track-title">
-        <img src="../../../assets/images/liked-songs.png" alt="User Playlist Image">
+        <img src={{track.album.imageUrl}} alt="User Playlist Image">
         <div class="info">
             <span class="title">{{track.title}}</span>
             <span *ngIf="track.artists.length == 1" class="artists">{{track.artists[0].name}}</span>
